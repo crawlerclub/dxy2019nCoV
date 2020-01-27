@@ -1,0 +1,1 @@
+00 * * * * /home/zliu/work/dxy2019nCoV/bin/get.sh
