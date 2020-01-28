@@ -7,7 +7,7 @@ def et(pattern, content):
     if len(data) <= 0: return ''
     return data[0]
 
-def main(f):
+def parse(f):
     content = open(f).read()
     data = et(r"getAreaStat = (.+?)}catch", content)
     city = json.loads(data)
@@ -17,7 +17,10 @@ def main(f):
     data = et(r"getListByCountryTypeService2 = (.+?)}catch", content)
     world = json.loads(data)
     rec = {"ts":ts, "city":city, "china":china, "world":world}
-    print(json.dumps(rec, ensure_ascii=False))
+    return rec
+
+def main(f):
+    print(json.dumps(parse(f), ensure_ascii=False))
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
