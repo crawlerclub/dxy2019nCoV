@@ -1,7 +1,7 @@
 import glob
 import parse
 
-def main():
+def records():
     times = set()
     data = []
     for f in glob.glob("../data/*.html"):
@@ -10,9 +10,12 @@ def main():
         times.add(item["ts"])
         for p in item['city']:
             del p['cities']
+            del p['comment']
+            del p['provinceName']
             p['ts'] = item["ts"]
         data.extend(item["city"])
-    print(data)
+    return data
 
 if __name__ == "__main__":
-    main()
+    data = records()
+    print(len(data))
