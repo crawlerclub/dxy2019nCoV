@@ -11,7 +11,7 @@ def parse(f):
     content = open(f).read()
     data = et(r"getAreaStat = (.+?)}catch", content)
     city = json.loads(data)
-    ts = et(r"截至 (.+?)（北京时间）数据统计", content)
+    ts = et(r"截至 (.+?)（北京时间）", content)
     data = et(r"getListByCountryTypeService1 = (.+?)}catch", content)
     china = json.loads(data)
     data = et(r"getListByCountryTypeService2 = (.+?)}catch", content)
