@@ -1,1 +1,2 @@
 00 * * * * /home/zliu/work/dxy2019nCoV/bin/get.sh
+05 09 * * * /home/zliu/work/dxy2019nCoV/bin/cotraffic.sh
