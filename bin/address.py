@@ -4,7 +4,7 @@ addr = AddrParser("addrdb")
 _cities = set(["北京市","天津市","上海市","重庆市"])
 def address(line):
     ret = addr.parse(line)
-    if len(ret) < 0: return ("NA", "NA")
+    if len(ret) <= 0: return ("NA", "NA")
     ret = ret[0]
     ret = ret['address'][0]
     code = ret['code']
