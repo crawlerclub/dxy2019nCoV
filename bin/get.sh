@@ -10,8 +10,5 @@ ts=`date +%Y%m%d%H%M`
 echo $day >> git.log
 wget ${url}  -O ../data/${ts}.html
 git add ../data/${ts}.html
-python citycnt.py
-echo "python citycnt.py" >> py.log
-git add ../cities/${ts}.json
 git commit -m "get data for ${ts}" >> git.log
 git push >> git.log
