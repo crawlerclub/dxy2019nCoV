@@ -2,7 +2,8 @@
 #  @author:       Zhanliang Liu
 #  @description:  get https://3g.dxy.cn/newh5/view/pneumonia hourly
 HOME=/home/zliu
-url="https://3g.dxy.cn/newh5/view/pneumonia"
+#url="https://3g.dxy.cn/newh5/view/pneumonia"
+url="https://ncov.dxy.cn/ncovh5/view/pneumonia"
 echo "Starting download ${url}"
 CURR_PATH=`cd $(dirname $0);pwd;`
 cd $CURR_PATH
