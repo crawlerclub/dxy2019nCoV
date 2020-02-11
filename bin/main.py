@@ -5,7 +5,11 @@ def records():
     times = set()
     data = []
     for f in glob.glob("../data/*.html"):
-        item = parse.parse(f)
+        try:
+            item = parse.parse(f)
+        except Exception as e:
+            print(e, f)
+            continue
         if item["ts"] in times: continue
         times.add(item["ts"])
         for p in item['city']:

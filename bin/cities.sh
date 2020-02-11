@@ -4,9 +4,7 @@
 HOME=/home/zliu
 CURR_PATH=`cd $(dirname $0);pwd;`
 cd $CURR_PATH
-ts=`date +%Y%m%d%H%M`
-python citycnt.py
-echo "python citycnt.py" >> py.log
-git add ../cities/${ts}.json
-git commit -m "get cities for ${ts}" >> git.log
-git push >> git.log
+python citycnt.py >> py.log
+git add ../cities/*.json
+git commit -m "get cities" 
+git push >> git_cities.log
